@@ -6,7 +6,7 @@ PLAYER_0 = "0"
 def display_board(board):
     for row in board:
         print("|".join(row))
-        print("-*-*-*")
+        print("-*-*-*-")
 
 def enter_move(board):
     while True:
@@ -41,6 +41,24 @@ def victory_for(board, sign):
 def draw_move(board):
     casillas_libres = make_list_of_free_fields(board)
     
+    # Verificar si la máquina puede ganar en el próximo movimiento
+    for x, y in casillas_libres:
+        # Simula el movimiento y verifica si la máquina gana
+        board[x][y] = PLAYER_0
+        if victory_for(board, PLAYER_0):
+            return
+        board[x][y] = " "  # Deshacer el movimiento si no gana
+
+    # Verificar si el jugador puede ganar en el próximo movimiento y bloquear
+    for x, y in casillas_libres:
+        # Simula el movimiento del jugador y verifica si va a ganar
+        board[x][y] = PLAYER_X
+        if victory_for(board, PLAYER_X):
+            board[x][y] = PLAYER_0  # Bloquea al jugador
+            return
+        board[x][y] = " "  # Deshacer el movimiento si no va a ganar
+
+    # Si no hay amenazas inminentes, realiza un movimiento aleatorio
     if casillas_libres:
         x, y = random.choice(casillas_libres)
         board[x][y] = PLAYER_0
