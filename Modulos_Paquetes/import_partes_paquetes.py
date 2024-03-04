@@ -5,7 +5,7 @@
 #Ejemplo:
 
 # Importar solo la función 'saludar' del módulo 'mi_modulo'
-from mi_modulo import saludar
+from Modulos_Paquetes.Paquetes import saludar
 
 # Puedes usar la función directamente sin el nombre del módulo
 saludar()
@@ -18,7 +18,7 @@ saludar()
 
 
 # Importar todo del módulo (mala práctica, puede causar colisiones de nombres)
-from mi_modulo import *
+from Modulos_Paquetes.Paquetes import *
 
 #Importante: Importar todo un módulo con el asterisco * no se recomienda, ya que puede causar colisiones de nombres y hacer que tu código sea menos legible. 
 #Es preferible importar solo lo necesario para evitar posibles conflictos.

@@ -6,7 +6,7 @@
 
 
 # Importar un módulo con alias
-import mi_modulo as modulillo
+import Modulos_Paquetes.Paquetes as modulillo
 
 # Ahora puedes acceder a las funciones y variables del módulo utilizando el alias
 modulillo.saludar()

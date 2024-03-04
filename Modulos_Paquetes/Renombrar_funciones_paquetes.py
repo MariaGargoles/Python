@@ -5,7 +5,7 @@
 
 
 # Renombrar la función 'saludar' del módulo 'mi_modulo' a 'saludar_modulo'
-from mi_modulo import saludar as saludar_modulo
+from Modulos_Paquetes.Paquetes import saludar as saludar_modulo
 
 # Definir una función 'saludar' en el programa principal
 def saludar():
