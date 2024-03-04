@@ -27,6 +27,7 @@ def enter_move(board):
             print("Coordenadas inválidas. Introduce valores válidos.")
 
 #Esta funcion hace una lista de los espacios en blanco 
+#TODO tenemos que añadir que si mete cualquier dato que no sea numerico lo vuelva pedir
             
 def make_list_of_free_fields(board):
     return [(fila, columna) for fila in range(3) for columna in range(3) if board[fila][columna] == " "]
