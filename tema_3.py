@@ -1,10 +1,128 @@
+#Variables y Funciones en Python
+#Variables
+
+#En Python, las variables son espacios de almacenamiento que contienen información. 
+#Cada variable tiene un nombre y un valor asociado. Aquí hay algunos conceptos clave sobre las variables en Python:
+#Variables Locales y Globales
+#Variables Locales: Son aquellas definidas dentro de una función y solo son accesibles dentro de esa función. No existen fuera de ella.
+#Variables Globales: Son aquellas definidas fuera de cualquier función y pueden ser accesibles desde cualquier parte del código.
+
+
+variable_global = 100
+
+#Ámbito de Variables
+#Ámbito Local: El alcance de una variable local se limita a la función donde se define.
+
+
+def foo():
+    variable_local = 10
+    print(variable_local)
+
+#Ámbito Global: El alcance de una variable global abarca todo el código.
+
+variable_global = 100
+
+#Paso por Valor y Paso por Referencia
+#Paso por Valor: Para variables inmutables como enteros, flotantes y cadenas, se pasa una copia del valor a la función.
+
+
+def modificar_valor(x):
+    x = x + 100
+    print(x)
+
+variable = 50
+modificar_valor(variable)  # Resultado: 150
+print(variable)  # Resultado: 50
+
+#Paso por Referencia: Para variables mutables como listas y diccionarios, se pasa la referencia a la variable original.
+
+
+def modificar_lista(lista):
+    lista.append(4)
+    print(lista)
+
+mi_lista = [1, 2, 3]
+modificar_lista(mi_lista)  # Resultado: [1, 2, 3, 4]
+print(mi_lista)  # Resultado: [1, 2, 3, 4]
+
+#Palabra Reservada "global"
+#La palabra clave global se utiliza para modificar una variable global dentro de una función.
+
+
+variable_global = 100
+
+def modificar_variable():
+    global variable_global
+    variable_global = variable_global + 200
+
+modificar_variable()
+print(variable_global)  # Resultado: 300
+
+#Funciones
+#En Python, las funciones son bloques de código reutilizables que realizan una tarea específica. Aquí están los conceptos fundamentales sobre funciones:
+#Definición de Funciones
+#Se definen con la palabra clave def.
+
+def saludar():
+    print("¡Hola, mundo!")
+
+#Parámetros y Argumentos
+#Parámetros: Son variables dentro de la definición de la función que reciben valores.
+
+def suma(a, b):
+    resultado = a + b
+    return resultado
+
+#Argumentos: Son los valores reales que se pasan a la función cuando se invoca.
+
+resultado_suma = suma(5, 10)
+print(resultado_suma)  # Resultado: 15
+
+#Retorno de Valores
+#Utilizamos la palabra clave return para devolver un valor desde una función.
+
+def cuadrado(numero):
+    return numero ** 2
+
+resultado_cuadrado = cuadrado(4)
+print(resultado_cuadrado)  # Resultado: 16
+
+#Variables Locales y Globales en Funciones
+#Las variables locales existen solo dentro de la función, mientras que las globales pueden ser accedidas desde cualquier lugar del código.
+
+
+variable_global = 100
+
+def modificar_variable():
+    global variable_global
+    variable_global = variable_global + 200
+
+modificar_variable()
+print(variable_global)  # Resultado: 300
+
+#Recursividad
+#Una función puede llamarse a sí misma en su definición. Sin embargo, es crucial tener un caso base que detenga la recursividad.
+
+
+def factorial(numero):
+    if numero == 1:
+        return 1
+    else:
+        return factorial(numero - 1) * numero
+
+resultado_factorial = factorial(5)
+print(resultado_factorial)  # Resultado: 120
+
+
 # Funciones
 # Se crean usando la palabra reservada def
 # def NOMBRE_FUNCION(PARAM_1, PARAM_2, ..)
 # La función más sencilla, que no hace nada
+
 def foo():
     pass
 
+# Imprimimos el tipo de la función
 print(type(foo))
 
 # Las funciones pueden llevar una cadena de documentación, que NO es un comentario
@@ -12,22 +130,24 @@ print(type(foo))
 # y un resumen de los parámetros de entrada y salida
 # La diferencia con los comentarios es que se pueden consultar
 # invocando al método mágico __doc__ que nos dará acceso a la documentación de la función
+
 def foo():
     """
     Ejemplo de cadena de documentación de la función que no hace nada
-    Parametros de entrada:
+    Parámetros de entrada:
         ninguno
     Salida:
         ninguna
     """
     pass
 
+# Accedemos a la documentación de la función
 print(foo.__doc__)
 
-
-# Las propias de python todas tienen documentación
+# Algunas funciones predefinidas en Python también tienen su propia documentación
 print(print.__doc__)
 print(max.__doc__)
+
 
 # Las funciones pueden tener un cuerpo que son las operaciones que se realizan dentro de la función
 def suma():
@@ -96,6 +216,7 @@ foo(90)
 # En la firma de la función le debemos indicar los valores por defecto de los parámetros
 # Solo se aplican si no viene un valor como argumento
 # Ejemplo de parámetro y como optativo
+
 def foo(x, y=10):
     print(x, y)
 
