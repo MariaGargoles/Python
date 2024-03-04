@@ -1,6 +1,5 @@
 #Utilizaremos este objeto para pintar la clase tablero
 
-# tablero.py
 class Tablero:
     @staticmethod
     def dibujar_muneco(errores):
