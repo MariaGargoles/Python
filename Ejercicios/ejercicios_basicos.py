@@ -291,7 +291,7 @@ resultado_2 = cadena_1[0:2:1] + cadena_2[2::]
 resultado = resultado_1 + " " + resultado_2
 
 print(resultado)
-#Aprovechando los avlores por defecto
+#Aprovechando los valores por defecto
 cadena_1 = input("Introduce cadena 1 ")
 cadena_2 = input("Introduce cadena 2 ")
 
@@ -314,7 +314,7 @@ print(cadena_final1 + " " + cadena_final2)
 # Si fallamos nos dirán si es mayor o menor que el número #buscado. 
 # También poner el número de intentos requeridos.
 #Tips
-# 1=> generar un nuemro aleatori
+# 1=> generar un numero aleatorio
 # import random
 # numero = random.randint(1,101) #sto gnera un numero entre 1 a 100 de forma aleatoria
 # 2 => debemos pedir el numero mientras NO se acierta asi que debemos poner un while
@@ -407,7 +407,7 @@ else:
     print("Felicidades has acertado")
     print("Has necesitado",numero_intentos)
 
-#Andres
+#Otra solucion
 
 intentos=5
 numero=randint(1, 100)
@@ -426,7 +426,7 @@ while(intentos>0):
     intentos-=1
 print(res)
 
-#Juan
+#Solucion
 import random
 num = random.randint(1,101)
 cont = 1
@@ -670,7 +670,7 @@ lista_numeros.reversed()
 
 print(",".join(lista_numeros))
 
-#Tambien se ouede hacer juntanto todo en un string de salida, lo veremos el proximo dia
+#Tambien se puede hacer juntanto todo en un string de salida, lo veremos el proximo dia
 
 #21. Escribir un programa que almacene el abecedario en una lista, 
 # elimine de la lista las #letras que ocupen posiciones múltiplos de 3, y 
@@ -706,7 +706,7 @@ for posicion in range(-1,-len(abecedario),-1):
 
 print(abecedario)
 
-#Cambiamos el orden del rngo
+#Cambiamos el orden del rango
 abecedario = []
 
 for numero in range(ord("a"),ord("z")+1):
@@ -898,7 +898,7 @@ while altura != len(lista_primos):
 for nivel in range(1,altura+1):
     print(lista_primos[:nivel:])
 
-#debemso imprimirlo como texto
+#debemos imprimirlo como texto
 altura = 5
 lista_primos = []
 numero = 1
@@ -919,7 +919,7 @@ while altura != len(lista_primos):
 for nivel in range(1,altura+1):
     print(" ".join(lista_primos[:-nivel:-1]))
 
-#Añadimos los retoqeus finales
+#Añadimos los retoques finales
 altura = int(input("Introice la altura "))
 lista_primos = []
 numero = 1
@@ -943,7 +943,7 @@ for nivel in range(1,altura+1):
     print(" ".join(lista_primos[nivel:len(lista_primos)]))
 
 
-#Andres
+#Opcion B
 lista=['1','2']
 number=int(input("Introducte un numero: "))
 primos=2
