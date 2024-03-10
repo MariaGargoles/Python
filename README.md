@@ -14,7 +14,8 @@ Este repositorio contiene apuntes y ejercicios relacionados con Python. Es un re
 
 
 2. **Ejercicios:**
-    Proximamente
+   - [Ejercicios](https://github.com/MariaGargoles/PCPP1_Python/tree/main/Ejercicios)
+    
 
 3. **Juegos:**
    - [Tres en raya](https://github.com/MariaGargoles/PCPP1_Python/tree/main/Juegos)
