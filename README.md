@@ -22,6 +22,9 @@ Este repositorio contiene apuntes y ejercicios relacionados con Python. Es un re
    - [Tres en raya](https://github.com/MariaGargoles/TresEnRaya)
    - [Ahorcado](https://github.com/MariaGargoles/Ahorcado)
 
+4. **Aplicaciones:**
+   - [Calculadora](https://github.com/MariaGargoles/Calculadora_Python)
+
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT - consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
