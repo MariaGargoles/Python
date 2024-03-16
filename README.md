@@ -11,6 +11,7 @@ Este repositorio contiene apuntes y ejercicios relacionados con Python. Es un re
    - [Modulos y Paquetes](https://github.com/MariaGargoles/PCPP1_Python/tree/main/tema_4_Modulos_Paquetes)
    - [POO en Python](https://github.com/MariaGargoles/PCPP1_Python/blob/main/tema_5.py)
    - [Gestion de datos en Python](https://github.com/MariaGargoles/PCPP1_Python/tree/main/tema_6_Datos_Python)
+   - [Creacion de interfaces graficas con Python](https://github.com/MariaGargoles/PCPP1_Python/tree/main/tema_7_Interfaz_Grafica)
 
 
 2. **Ejercicios:**
