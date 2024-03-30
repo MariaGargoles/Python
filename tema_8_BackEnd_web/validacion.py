@@ -1,20 +1,22 @@
-#Ejercicio 3
-#Crear un módulo que solicite al usuario el ingreso de un nombre de usuario y contraseña y que 
-#los valide utilizando los módulos generados en los dos ejercicios anteriores.
-
+# Importar los módulos de validación de contraseñas y de nombres de usuario
 import contrasenas as c
 import usuarios as u
 
+# Función para solicitar una entrada al usuario
 def solicitar(mensaje):
-    return (input(mensaje))
+    return input(mensaje)
 
+# Función para validar un nombre de usuario y contraseña
 def validacion():
-    usuario = solicitar("Introduce un nombre de usuario ")
-    password = solicitar("Introduce un password ")
+    # Solicitar al usuario que ingrese un nombre de usuario y una contraseña
+    usuario = solicitar("Introduce un nombre de usuario: ")
+    password = solicitar("Introduce un password: ")
 
+    # Verificar si la contraseña cumple con los criterios de aceptación
+    # y si el nombre de usuario es válido utilizando los módulos previamente importados
     if c.condicion(password) and u.valido(usuario):
         print("Todo OK")
-        return True
+        return True  # Devolver True si ambos son válidos
     else:
         print("Error al introducir")
-        return False
+        return False  # Devolver False si al menos uno de ellos es inválido
