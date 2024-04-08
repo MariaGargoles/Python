@@ -6,10 +6,10 @@ from datetime import datetime, timedelta
 fecha = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 # Cabecera del fichero IPs_maliciosas.txt
-with open('/home/auditoria/IPs_maliciosas.txt', 'w') as f:
+with open('/home/carpeta/IPs_maliciosas.txt', 'w') as f:
     f.write("---------------------------------------------------------------------------------------------------------------------------\n")
     f.write("\n")
-    f.write("-------------- IPs maliciosas desde las que se hacen ataques por fuerza bruta contra nuestro sistema tardis. --------------\n")
+    f.write("-------------- IPs maliciosas desde las que se hacen ataques por fuerza bruta contra nuestro sistema. --------------\n")
     f.write("\n")
     f.write("---------------------------------------------------------------------------------------------------------------------------\n")
 
@@ -17,9 +17,9 @@ with open('/home/auditoria/IPs_maliciosas.txt', 'w') as f:
 ndias = input(f"Hola {subprocess.getoutput('echo $USER')}, ¿de cuántos días quieres filtrar el journalctl? ")
 ndias = int(ndias)
 
-# Consultar el journalctl y filtrarlo por +invalid user+. El resultado se guarda en el fichero IPs_maliciosas.txt que está en /home/auditoria
+# Consultar el journalctl y filtrarlo por +invalid user+. El resultado se guarda en el fichero IPs_maliciosas.txt que está en /home/carpeta
 journal_output = subprocess.getoutput(f"sudo journalctl -S -{ndias}d | grep 'invalid user'")
-with open('/home/auditoria/IPs_maliciosas.txt', 'a') as f:
+with open('/home/carpeta/IPs_maliciosas.txt', 'a') as f:
     for line in journal_output.splitlines():
         parts = line.split()
         if parts[11] != "port":
@@ -31,12 +31,12 @@ with open('/home/auditoria/IPs_maliciosas.txt', 'a') as f:
 if subprocess.run(["echo", "$?"], capture_output=True).stdout.decode().strip() == "0":
     print("El fichero IPs_maliciosas ha sido creado correctamente")
     # Cambiar los permisos del fichero
-    subprocess.run(["sudo", "chmod", "664", "/home/auditoria/IPs_maliciosas.txt"])
+    subprocess.run(["sudo", "chmod", "664", "/home/carpeta/IPs_maliciosas.txt"])
     # Cambiar el grupo y el propietario del fichero
-    subprocess.run(["sudo", "chown", "seginf_director:auditoria", "/home/auditoria/IPs_maliciosas.txt"])
+    subprocess.run(["sudo", "chown", "seginf_director:carpeta", "/home/carpeta/IPs_maliciosas.txt"])
 
     # Pie del fichero
-    with open('/home/auditoria/IPs_maliciosas.txt', 'a') as f:
+    with open('/home/carpeta/IPs_maliciosas.txt', 'a') as f:
         f.write("\n")
         f.write("---------------------------------------------------------------------------------------------------------------------------\n")
         f.write("\n")
@@ -47,4 +47,4 @@ else:
 
 respuesta = input("¿Quieres mostrar por pantalla el resultado? 's' para aceptar: ")
 if respuesta.lower() == "s":
-    subprocess.run(["less", "/home/auditoria/IPs_maliciosas.txt"])
+    subprocess.run(["less", "/home/carpeta/IPs_maliciosas.txt"])
